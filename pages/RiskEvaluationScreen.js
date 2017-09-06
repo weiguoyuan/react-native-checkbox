@@ -84,7 +84,7 @@ class RiskEvaluationScreen extends Component {
             if (answers[i].stemId == stemId) {
                 if (type == 1) {//多选
                     if (answers[i].option.includes(id)) {
-                        answers[i].option.splice(answers[i].option.findIndex(id), 1);
+                        answers[i].option.splice(answers[i].option.indexOf(id), 1);
                     } else {
                         answers[i].option.push(id);
                     }
