@@ -1,19 +1,5 @@
 import React, {Component} from 'react';
-import {
-    Slider,
-    ListView,
-    Text,
-    ScrollView,
-    View,
-    TouchableOpacity,
-    Dimensions,
-    StyleSheet,
-    Alert,
-    Platform,
-    Image,
-    TextInput,
-    AsyncStorage
-} from "react-native";
+import {Text,View,TouchableOpacity,Dimensions,StyleSheet,Alert,Image} from "react-native";
 import Commons, {ProgressView, Link, context, HocNavScreen} from "commons";
 import {Navigation} from "react-native-navigation";
 import {RiskQuestionnNaireModel,RiskEvaluationResultModel} from "app-js-sdk";
@@ -32,7 +18,6 @@ class RiskEvaluationScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            remind: true,
             paper: null,
             loading: false,
         };
