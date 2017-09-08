@@ -1,17 +1,5 @@
 import React, {Component} from "react";
-import {
-    Slider,
-    ListView,
-    Text,
-    View,
-    TouchableOpacity,
-    Dimensions,
-    StyleSheet,
-    Alert,
-    Platform,
-    Image
-} from "react-native";
-import Commons, {ProgressView, Link, context, expectedRevenue, RefreshListView} from "commons";
+import {Text,View,TouchableOpacity,Image} from "react-native";
 
 type Props = {
     data: Object,
@@ -25,15 +13,10 @@ const CheckRadioImage = require('../../img/pop/check_radio.png');
 
 export default class RiskCheckBox extends Component {
     props: Props;
-    static defaultProps = {
-        data: {},
-    };
-
     commons: Commons = new Commons().bind(this);
     constructor(props) {
         super(props);
         this.state = {
-            remind: true,
             paper:null,
             loading: false,
             checkedOption:[],
