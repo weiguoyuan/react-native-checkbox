@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Text,View,TouchableOpacity,Image,Dimensions} from "react-native";
+import {Text,View,TouchableOpacity,Image,StyleSheet} from "react-native";
 
 type Props = {
     data: Object,
