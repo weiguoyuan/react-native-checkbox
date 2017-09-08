@@ -47,7 +47,7 @@ class RiskEvaluationScreen extends Component {
 
         for(let i=0;i<answers.length;i++){
             if(answers[i].option.length==0){
-                Alert.alert("第"+(i+1)+"题未作答,强选择答案!");
+                Alert.alert("Number "+(i+1)+"question is not checked !");
                 return false;
                 this.tag=false;
             }
@@ -67,13 +67,13 @@ class RiskEvaluationScreen extends Component {
     callBack = (type, stemId, id) => {
         for (let i = 0; i < answers.length; i++) {
             if (answers[i].stemId == stemId) {
-                if (type == 1) {//多选
+                if (type == 1) {//check box
                     if (answers[i].option.includes(id)) {
                         answers[i].option.splice(answers[i].option.indexOf(id), 1);
                     } else {
                         answers[i].option.push(id);
                     }
-                } else {
+                } else {//radio
                     answers[i].option[0] = id;
                 }
             }
@@ -91,7 +91,7 @@ class RiskEvaluationScreen extends Component {
         return (
             <ScrollView style={styles.wrap}>
                 <View style={styles.header}>
-                    <Text style={styles.h_text}>尊敬的投资者： 以下10个问题将根据您的财务状况、投资经验、投资风格、风险偏好和风险承受能力等对您进行风险评估（每个问题请选择唯一选项，不可多选），它可协助我们评估您的投资偏好和风险承受能力，有助于您控制投资的风险，同时也便于据此为您提供更准确的服务。</Text>
+                    <Text style={styles.h_text}>Dear user：Please do this test</Text>
                 </View>
                 {paper.map((rowData, i) => (
                     <View>
@@ -112,7 +112,7 @@ class RiskEvaluationScreen extends Component {
                 </View>
                 <View style={styles.button}>
                     <TouchableOpacity style={styles.btnWrap} onPress={this.onChange}>
-                        <Text style={styles.btnText}>完成</Text>
+                        <Text style={styles.btnText}>complete</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>
